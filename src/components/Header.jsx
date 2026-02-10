@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import { cn } from "../lib/utils";
 import useTheme from "../hooks/usetheme";
+import { motion, AnimatePresence } from "framer-motion"; // Import Framer Motion
 import {
   Home,
   User,
@@ -12,7 +13,6 @@ import {
   X,
   Sun,
   Moon,
-  FileText,
 } from "lucide-react";
 
 const sections = [
@@ -92,7 +92,7 @@ const Header = () => {
                   to={section.id}
                   smooth={true}
                   duration={500}
-                  offset={-100} // Adjusts scroll position so header doesn't cover title
+                  offset={-100}
                   onClick={() => setActiveSection(section.id)}
                   className={cn(
                     "relative cursor-pointer flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300",
@@ -125,13 +125,26 @@ const Header = () => {
         </div>
       </nav>
 
-      {/* --- Mobile Navigation Button --- */}
+      {/* --- Mobile Navigation Button (Animated) --- */}
       <div className="md:hidden fixed top-4 right-4 z-50">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="p-3 rounded-full bg-white dark:bg-gray-900 shadow-lg border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white transition-transform duration-300 active:scale-95"
+          className="p-3 rounded-full bg-white dark:bg-gray-900 shadow-lg border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white active:scale-95 transition-transform"
+          aria-label="Toggle menu"
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {/* AnimatePresence handles the smooth in/out transition */}
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.div
+              key={isOpen ? "close" : "open"}
+              initial={{ rotate: -90, opacity: 0, scale: 0.5 }}
+              animate={{ rotate: 0, opacity: 1, scale: 1 }}
+              exit={{ rotate: 90, opacity: 0, scale: 0.5 }}
+              transition={{ duration: 0.2, ease: "0.22, 1, 0.36, 1" }}
+              className="flex items-center justify-center"
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </motion.div>
+          </AnimatePresence>
         </button>
       </div>
 

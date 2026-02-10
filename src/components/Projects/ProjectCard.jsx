@@ -43,10 +43,10 @@ export function ProjectCard({ title, description, tags, link, isNew }) {
               </Badge>
             )}
           </div>
-          <div className="hidden font-mono text-xs underline print:visible">
+          <div className="hidden text-xs underline print:visible">
             {link?.replace("https://", "").replace("www.", "").replace("/", "")}
           </div>
-          <CardDescription className="font-mono text-xs leading-relaxed text-slate-500 dark:text-slate-400">
+          <CardDescription className=" text-xs leading-relaxed text-slate-500 dark:text-slate-400">
             {description}
           </CardDescription>
         </div>

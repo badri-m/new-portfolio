@@ -55,10 +55,11 @@ const Timeline = () => {
   return (
     <section
       id="timeline"
-      className="py-16 bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
+      // ADDED "font-inter" here to match your About component
+      className="py-16 bg-gray-50 dark:bg-gray-900 transition-colors duration-300 font-inter"
     >
       <div className="max-w-6xl mx-auto px-4 md:px-0">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-orange-600 dark:text-orange-400">
           My Journey
         </h2>
 
@@ -121,7 +122,7 @@ const Timeline = () => {
                     </CardHeader>
 
                     <CardContent className="relative z-10">
-                      <CardDescription className="text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+                      <CardDescription className=" text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
                         {item.description}
                       </CardDescription>
                     </CardContent>

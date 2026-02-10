@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import { ProjectsSection } from "./components/Projects/ProjectsSection";
 import Timeline from "./components/themetoggle";
 import TechMarquee from "./components/TechMarquee";
+import ScrollToTop from "./components/ui/scroll-to-top";
 
 // Your project data
 const myProjects = [
@@ -27,17 +28,23 @@ const App = () => {
       <Header />
       <main>
         <Home />
-       {/*<TechMarquee />*/}
+        {/*<TechMarquee />*/}
         <About />
 
         {/* Project Section */}
-        <section id="projects" className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold mb-8 text-center">My Projects</h2>
+        <section
+          id="projects"
+          className="py-12 px-4 md:px-8 max-w-7xl mx-auto font-inter"
+        >
+          <h2 className="text-3xl font-bold mb-8 text-center text-[#fe5617]">
+            My Projects
+          </h2>
           <ProjectsSection projects={myProjects} />
         </section>
 
         <Timeline />
       </main>
+      <ScrollToTop />
       <Footer />
     </div>
   );

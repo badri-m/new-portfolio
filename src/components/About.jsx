@@ -58,7 +58,7 @@ const About = () => {
           <h2 className="text-2xl font-bold text-[#fe5617] text-center">
             My Skills
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-3 md:grid-cols-4 gap-8 text-center">
             {/* Skill Icons */}
             {[
               {
