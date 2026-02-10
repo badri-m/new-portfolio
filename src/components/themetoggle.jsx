@@ -31,36 +31,64 @@ const timelineData = [
 
 const Timeline = () => {
   return (
-    <section id="timeline" className="py-16 bg-gray-100 dark:bg-gray-900">
-      <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
+    <section
+      id="timeline"
+      className="py-16 bg-gray-100 dark:bg-gray-900 transition-colors duration-300"
+    >
+      <div className="max-w-6xl mx-auto px-4 md:px-0">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
           My Journey
         </h2>
 
-        <div className="relative border-l-2 border-[#fe5617] dark:border-orange-400">
-          {timelineData.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              className="mb-10 ml-6"
-            >
-              <span className="absolute -left-6 flex items-center justify-center w-10 h-10 rounded-full bg-white dark:bg-gray-800 border-2 border-[#fe5617] dark:border-orange-400">
-                {item.icon}
-              </span>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                {item.title}
-              </h3>
-              <time className="block mb-2 text-sm text-gray-500 dark:text-gray-400">
-                {item.date}
-              </time>
-              <p className="text-gray-700 dark:text-gray-300">
-                {item.description}
-              </p>
-            </motion.div>
-          ))}
+        {/* Timeline Container */}
+        <div className="relative">
+          {/* Vertical Line */}
+          <div className="absolute left-8 md:left-1/2 top-0 h-full w-0.5 bg-[#fe5617]/30 dark:bg-orange-400/30 transform -translate-x-1/2"></div>
+
+          <div className="space-y-12">
+            {timelineData.map((item, index) => (
+              <div
+                key={index}
+                // FIX: Added 'justify-between' to force content to edges
+                className={`relative flex items-center justify-between w-full ${
+                  index % 2 === 0 ? "md:flex-row-reverse" : ""
+                }`}
+              >
+                {/* Spacer (Desktop Only) - Keeps the "empty" side empty */}
+                <div className="hidden md:block w-5/12" />
+
+                {/* Icon (Centered) */}
+                <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-white dark:bg-gray-800 border-4 border-[#fe5617] dark:border-orange-400 z-10 shadow-md">
+                  <div className="text-xl">{item.icon}</div>
+                </div>
+
+                {/* Content Card */}
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                  className={`w-full pl-20 md:pl-0 md:w-5/12 ${
+                    index % 2 === 0
+                      ? "md:text-right md:pr-12"
+                      : "md:text-left md:pl-12"
+                  }`}
+                >
+                  <div className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100 dark:border-gray-700">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                      {item.title}
+                    </h3>
+                    <span className="inline-block px-3 py-1 my-2 text-xs font-semibold text-[#fe5617] bg-orange-100 dark:bg-orange-900/30 rounded-full">
+                      {item.date}
+                    </span>
+                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </motion.div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

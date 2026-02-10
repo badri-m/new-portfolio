@@ -27,7 +27,7 @@ const App = () => {
       <Header />
       <main>
         <Home />
-        <TechMarquee />
+       {/*<TechMarquee />*/}
         <About />
 
         {/* Project Section */}

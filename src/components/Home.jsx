@@ -1,5 +1,11 @@
 import Typewriter from "typewriter-effect";
-import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import {
+  FaPhoneAlt,
+  FaEnvelope,
+  FaGithub,
+  FaLinkedin,
+  FaInstagram,
+} from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 
 const Home = () => {
@@ -20,10 +26,10 @@ const Home = () => {
             <Typewriter
               options={{
                 strings: [
-                  "devops.",
+                  "DevOps Engineer.",
+                  "Full Stack Developer.",
                   "Tutor.",
                   "Content Creator.",
-                  "Designer.",
                 ],
                 autoStart: true,
                 loop: true,
@@ -56,20 +62,52 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Button */}
-          <div className="bg-[#fe5617] hover:bg-[#e14d15] px-5 py-2 rounded-2xl font-bold text-white dark:bg-white dark:text-black transition-colors duration-300">
-            <a href="#">Download CV</a>
-          </div>
+          {/* Buttons & Socials Container */}
+          <div className="flex flex-col md:flex-row items-center gap-6 mt-4">
+            {/* Download CV Button */}
+            <a
+              href="/resume.pdf"
+              download
+              className="bg-[#fe5617] hover:bg-[#e14d15] text-white dark:bg-white dark:text-black px-6 py-3 rounded-2xl font-bold transition-all duration-300 shadow-lg hover:shadow-orange-500/20"
+            >
+              Download CV
+            </a>
 
-          <div className="flex place-items-center gap-3 bg-[#fe5617] hover:bg-[#e14d15] px-5 py-2 rounded-2xl font-bold text-white dark:bg-white dark:text-black transition-colors duration-300">
-            <a href="#">Down</a>
+            {/* Social Media Icons */}
+            <div className="flex items-center gap-5">
+              <a
+                href="https://github.com/yourusername"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-700 dark:text-gray-300 hover:text-[#fe5617] dark:hover:text-[#fe5617] transition-colors duration-300"
+              >
+                <FaGithub size={30} />
+              </a>
+              <a
+                href="https://linkedin.com/in/yourusername"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-700 dark:text-gray-300 hover:text-[#fe5617] dark:hover:text-[#fe5617] transition-colors duration-300"
+              >
+                <FaLinkedin size={30} />
+              </a>
+              <a
+                href="https://instagram.com/yourusername"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-700 dark:text-gray-300 hover:text-[#fe5617] dark:hover:text-[#fe5617] transition-colors duration-300"
+              >
+                <FaInstagram size={30} />
+              </a>
+            </div>
           </div>
         </div>
 
         {/* Right Section */}
-        <div className="order-1 lg:order-2 flex justify-end items-center">
+        {/* UPDATED: justify-center (mobile) -> lg:justify-end (desktop) */}
+        <div className="order-1 lg:order-2 flex justify-center lg:justify-end items-center">
           <img
-            className="w-[85%] rounded-[50px] shadow-lg"
+            className="w-[85%] rounded-[50px] shadow-2xl border-4 border-transparent hover:border-[#fe5617] transition-all duration-500"
             src="/profile.webp"
             alt="Profile"
           />
