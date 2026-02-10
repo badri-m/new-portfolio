@@ -20,7 +20,7 @@ const sections = [
   { id: "about", label: "About", icon: User },
   { id: "skills", label: "Skills", icon: Code },
   { id: "projects", label: "Projects", icon: Briefcase },
-  { id: "timeline", label: "Timeline", icon: Clock },
+  { id: "timeline", label: "My Journey", icon: Clock },
 ];
 
 const Header = () => {

@@ -31,7 +31,7 @@ const App = () => {
         <About />
 
         {/* Project Section */}
-        <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
+        <section id="projects" className="py-12 px-4 md:px-8 max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold mb-8 text-center">My Projects</h2>
           <ProjectsSection projects={myProjects} />
         </section>
