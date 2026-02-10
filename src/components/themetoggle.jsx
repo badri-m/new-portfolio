@@ -1,31 +1,53 @@
 "use client";
+import React from "react";
 import { motion } from "framer-motion";
-import { FaBriefcase, FaCode, FaLaptopCode } from "react-icons/fa";
+import {
+  FaBriefcase,
+  FaCode,
+  FaLaptopCode,
+  FaGraduationCap,
+} from "react-icons/fa";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+} from "./ui/Card";
+import { Badge } from "./ui/Badge";
 
 const timelineData = [
   {
-    icon: <FaBriefcase className="text-[#fe5617]" />,
+    icon: <FaBriefcase className="text-white" />,
     title: "Internship",
-    description: "Completed a UI/UX internship using Adobe XD.",
+    description:
+      "Completed a UI/UX internship using Adobe XD, learning the fundamentals of user-centered design.",
     date: "2024",
+    tag: "Experience",
   },
   {
-    icon: <FaCode className="text-[#fe5617]" />,
+    icon: <FaCode className="text-white" />,
     title: "Full Stack Learning",
-    description: "Currently exploring React, Node.js, Docker, AWS.",
+    description:
+      "Deep dived into the MERN stack. Built scalable REST APIs with Node.js and interactive UIs with React.",
     date: "2025",
+    tag: "Education",
   },
   {
-    icon: <FaLaptopCode className="text-[#fe5617]" />,
-    title: "Portfolio",
-    description: "Built my portfolio with React + Vite + Tailwind.",
+    icon: <FaLaptopCode className="text-white" />,
+    title: "Portfolio Development",
+    description:
+      "Designed and developed this personal portfolio using React, Vite, and Tailwind CSS to showcase my skills.",
     date: "2025",
+    tag: "Project",
   },
   {
-    icon: <FaLaptopCode className="text-[#fe5617]" />,
-    title: "Portfolio",
-    description: "Built my portfolio with React + Vite + Tailwind.",
-    date: "2025",
+    icon: <FaGraduationCap className="text-white" />,
+    title: "Engineering Degree",
+    description:
+      "Currently pursuing B.E. in Computer Science, maintaining a strong focus on Data Structures and Algorithms.",
+    date: "2022-2026",
+    tag: "Education",
   },
 ];
 
@@ -33,7 +55,7 @@ const Timeline = () => {
   return (
     <section
       id="timeline"
-      className="py-16 bg-gray-100 dark:bg-gray-900 transition-colors duration-300"
+      className="py-16 bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
     >
       <div className="max-w-6xl mx-auto px-4 md:px-0">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
@@ -43,48 +65,67 @@ const Timeline = () => {
         {/* Timeline Container */}
         <div className="relative">
           {/* Vertical Line */}
-          <div className="absolute left-8 md:left-1/2 top-0 h-full w-0.5 bg-[#fe5617]/30 dark:bg-orange-400/30 transform -translate-x-1/2"></div>
+          <div className="absolute left-8 md:left-1/2 top-0 h-full w-0.5 bg-gradient-to-b from-[#fe5617] to-orange-300 dark:from-orange-500 dark:to-orange-900 transform -translate-x-1/2 rounded-full"></div>
 
           <div className="space-y-12">
             {timelineData.map((item, index) => (
               <div
                 key={index}
-                // FIX: Added 'justify-between' to force content to edges
                 className={`relative flex items-center justify-between w-full ${
                   index % 2 === 0 ? "md:flex-row-reverse" : ""
                 }`}
               >
-                {/* Spacer (Desktop Only) - Keeps the "empty" side empty */}
-                <div className="hidden md:block w-5/12" />
+                {/* Spacer for Desktop */}
+                <div className="hidden md:block w-1/2" />
 
-                {/* Icon (Centered) */}
-                <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-white dark:bg-gray-800 border-4 border-[#fe5617] dark:border-orange-400 z-10 shadow-md">
-                  <div className="text-xl">{item.icon}</div>
+                {/* Center Icon Bubble */}
+                <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-[#fe5617] dark:bg-orange-600 border-4 border-white dark:border-gray-900 z-10 shadow-lg transition-transform duration-300 hover:scale-110">
+                  <div className="text-lg">{item.icon}</div>
                 </div>
 
-                {/* Content Card */}
+                {/* Interactive Card */}
                 <motion.div
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                  className={`w-full pl-20 md:pl-0 md:w-5/12 ${
-                    index % 2 === 0
-                      ? "md:text-right md:pr-12"
-                      : "md:text-left md:pl-12"
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  className={`w-full pl-20 md:pl-0 md:w-1/2 ${
+                    index % 2 === 0 ? "md:pr-12" : "md:pl-12"
                   }`}
                 >
-                  <div className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100 dark:border-gray-700">
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-                      {item.title}
-                    </h3>
-                    <span className="inline-block px-3 py-1 my-2 text-xs font-semibold text-[#fe5617] bg-orange-100 dark:bg-orange-900/30 rounded-full">
-                      {item.date}
-                    </span>
-                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
+                  <Card className="group relative overflow-hidden border border-slate-200 bg-white dark:bg-slate-950 dark:border-slate-800 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:border-[#fe5617]/50 dark:hover:border-orange-500/50">
+                    {/* Hover Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-orange-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 dark:from-orange-900/10 pointer-events-none" />
+
+                    <CardHeader className="relative z-10">
+                      <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
+                        <div className="flex items-center gap-2">
+                          <Badge
+                            variant="secondary"
+                            className="bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300 hover:bg-orange-200 transition-colors"
+                          >
+                            {item.date}
+                          </Badge>
+                          <Badge
+                            variant="outline"
+                            className="text-xs text-gray-500 border-gray-200 dark:border-gray-700"
+                          >
+                            {item.tag}
+                          </Badge>
+                        </div>
+                      </div>
+
+                      <CardTitle className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-[#fe5617] dark:group-hover:text-orange-400 transition-colors">
+                        {item.title}
+                      </CardTitle>
+                    </CardHeader>
+
+                    <CardContent className="relative z-10">
+                      <CardDescription className="text-base text-gray-600 dark:text-gray-300 leading-relaxed">
+                        {item.description}
+                      </CardDescription>
+                    </CardContent>
+                  </Card>
                 </motion.div>
               </div>
             ))}

@@ -54,7 +54,7 @@ const About = () => {
         </p>
 
         {/* Skills Section */}
-        <div className="space-y-8">
+        <div id="skills" className="space-y-8">
           <h2 className="text-2xl font-bold text-[#fe5617] text-center">
             My Skills
           </h2>
@@ -206,3 +206,4 @@ const About = () => {
 };
 
 export default About;
+
