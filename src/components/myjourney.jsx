@@ -19,39 +19,31 @@ import { Badge } from "./ui/Badge";
 const timelineData = [
   {
     icon: <FaBriefcase className="text-white" />,
-    title: "Internship",
+    title: "UI/UX Developer Internship @ AIIRF",
     description:
-      "Completed a UI/UX internship using Adobe XD, learning the fundamentals of user-centered design.",
-    date: "2024",
-    tag: "Experience",
+      "Completed a UI/UX Developer Internship at AIIRF, Chidambaram. Designed user-friendly interfaces using Figma and collaborated with developers to improve usability.",
+    date: "May 2024 – June 2024",
+    tag: "internship",
   },
   {
     icon: <FaCode className="text-white" />,
-    title: "Full Stack Learning",
+    title: "MERN Stack Intern @ Hitakey Tech Solutions",
     description:
-      "Deep dived into the MERN stack. Built scalable REST APIs with Node.js and interactive UIs with React.",
-    date: "2025",
-    tag: "Education",
-  },
-  {
-    icon: <FaLaptopCode className="text-white" />,
-    title: "Portfolio Development",
-    description:
-      "Designed and developed this personal portfolio using React, Vite, and Tailwind CSS to showcase my skills.",
-    date: "2025",
-    tag: "Project",
+      "Worked as a MERN Stack Intern at Hitakey Tech Solutions, Tiruchirappalli. Built full-stack applications, dockerized services, and automated deployments in an Agile team environment.",
+    date: "May 2025 – June 2025",
+    tag: "internship",
   },
   {
     icon: <FaGraduationCap className="text-white" />,
     title: "Engineering Degree",
     description:
-      "Currently pursuing B.E. in Computer Science, maintaining a strong focus on Data Structures and Algorithms.",
-    date: "2022-2026",
-    tag: "Education",
+      "Successfully completed my undergraduate degree at Annamalai University, with a strong focus on cloud computing, DevOps practices, and software engineering fundamentals.",
+    date: "2022 – 2026",
+    tag: "education",
   },
 ];
 
-const Timeline = () => {
+const MyJourney = () => {
   return (
     <section
       id="timeline"
@@ -137,4 +129,4 @@ const Timeline = () => {
   );
 };
 
-export default Timeline;
+export default MyJourney;

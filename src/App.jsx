@@ -5,22 +5,10 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 // UPDATE THE IMPORT PATH BELOW
 import { ProjectsSection } from "./components/Projects/ProjectsSection";
-import Timeline from "./components/themetoggle";
+import myProjects from "./components/Projects/projectdata";
+import MyJourney from "./components/myjourney";
 import TechMarquee from "./components/TechMarquee";
 import ScrollToTop from "./components/ui/scroll-to-top";
-
-// Your project data
-const myProjects = [
-  {
-    title: "Portfolio Website",
-    description:
-      "My personal portfolio built with React, Vite, and Tailwind CSS.",
-    techStack: ["React", "Tailwind", "Vite"],
-    link: { href: "https://github.com/yourname/portfolio", label: "GitHub" },
-    isNew: true,
-  },
-  // Add more projects...
-];
 
 const App = () => {
   return (
@@ -42,7 +30,7 @@ const App = () => {
           <ProjectsSection projects={myProjects} />
         </section>
 
-        <Timeline />
+        <MyJourney />
       </main>
       <ScrollToTop />
       <Footer />

@@ -41,9 +41,10 @@ const Home = () => {
 
           {/* About Me */}
           <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 font-medium">
-            A passionate MERN stack developer with 2 years of experience,
-            dedicated to building user-friendly web applications. I thrive on
-            learning and sharing knowledge as a tutor and content creator.
+            A passionate Cloud & DevOps Engineer with hands-on experience in
+            AWS, Docker, Kubernetes, Terraform, and CI/CD pipelines. I focus on
+            building scalable, automated, and production-ready cloud systems
+            with Infrastructure as Code.
           </p>
 
           {/* Contact Information */}
