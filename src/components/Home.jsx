@@ -118,7 +118,7 @@ const Home = () => {
         <div className="order-1 lg:order-2 flex justify-center lg:justify-end items-center">
           <img
             className="w-[85%] rounded-[50px] shadow-2xl border-4 border-transparent hover:border-[#fe5617] transition-all duration-500"
-            src="/profile.webp"
+            src="/profile-pic.png"
             alt="Profile"
           />
         </div>
