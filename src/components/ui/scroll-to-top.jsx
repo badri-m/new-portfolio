@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button } from "./button";
+import Button from "./Button.jsx";
 import { ArrowUpIcon } from "lucide-react";
 
 export default function ScrollToTop() {
