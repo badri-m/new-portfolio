@@ -5,8 +5,9 @@ import {
   FaGithub,
   FaLinkedin,
   FaInstagram,
-} from "react-icons/fa";
+  } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
+import { SiCredly } from "react-icons/si";
 
 const Home = () => {
   return (
@@ -27,9 +28,8 @@ const Home = () => {
               options={{
                 strings: [
                   "DevOps Engineer.",
-                  "Full Stack Developer.",
-                  "Tutor.",
-                  "Content Creator.",
+                  "Cloud Engineer.",
+                  "Site Reliability Engineer.",
                 ],
                 autoStart: true,
                 loop: true,
@@ -67,7 +67,7 @@ const Home = () => {
           <div className="flex flex-col md:flex-row items-center gap-6 mt-4">
             {/* Download CV Button */}
             <a
-              href="/resume.pdf"
+              href="public/Badri_Narayanan-resume.pdf"
               download
               className="bg-[#fe5617] hover:bg-[#e14d15] text-white dark:bg-white dark:text-black px-6 py-3 rounded-2xl font-bold transition-all duration-300 shadow-lg hover:shadow-orange-500/20"
             >
@@ -77,7 +77,7 @@ const Home = () => {
             {/* Social Media Icons */}
             <div className="flex items-center gap-5">
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/badri-m"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-700 dark:text-gray-300 hover:text-[#fe5617] dark:hover:text-[#fe5617] transition-colors duration-300"
@@ -85,7 +85,7 @@ const Home = () => {
                 <FaGithub size={30} />
               </a>
               <a
-                href="https://linkedin.com/in/yourusername"
+                href="https://www.linkedin.com/in/badri-narayanan-m-22k18?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-700 dark:text-gray-300 hover:text-[#fe5617] dark:hover:text-[#fe5617] transition-colors duration-300"
@@ -93,12 +93,21 @@ const Home = () => {
                 <FaLinkedin size={30} />
               </a>
               <a
-                href="https://instagram.com/yourusername"
+                href="https://instagram.com/lonely boy 880"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-700 dark:text-gray-300 hover:text-[#fe5617] dark:hover:text-[#fe5617] transition-colors duration-300"
               >
                 <FaInstagram size={30} />
+              </a>
+              <a
+                href="https://www.credly.com/users/badri-narayanan.m"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-700 dark:text-gray-300 hover:text-[#fe5617] dark:hover:text-[#fe5617] transition-colors duration-300"
+                aria-label="Credly badges"
+              >
+                <SiCredly size={30} />
               </a>
             </div>
           </div>

@@ -14,6 +14,7 @@ import {
 } from "react-icons/fa";
 import {
   SiJenkins,
+  SiGithubactions,
   SiTailwindcss,
   SiExpress,
   SiNetlify,
@@ -108,6 +109,10 @@ const About = () => {
               {
                 icon: <FaPython size={40} className="text-[#3776AB]" />,
                 name: "Python",
+              },
+              {
+                icon: <SiGithubactions size={40} className="text-[#2088FF]" />,
+                name: "GitHub Actions",
               },
               {
                 icon: (
@@ -214,4 +219,3 @@ const About = () => {
 };
 
 export default About;
-
