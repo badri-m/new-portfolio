@@ -16,6 +16,14 @@ const myProjects = [
     isNew: true,
   },
   {
+    title: "Terraform ec2 Infrastructure",
+    description:
+      "IaC project that provisions and manages AWS EC2 instances via Terraform.",
+    techStack: ["Terraform", "AWS EC2", "iac"],
+    link: { href: "https://github.com/badri-m/terraform-ec2", label: "GitHub" },
+    isNew: true,
+  },
+  {
     title: "Flask App on EKS",
     description:
       "Containerized Flask application deployed to Amazon EKS for scalable cloud-native workloads.",

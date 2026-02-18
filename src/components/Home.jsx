@@ -55,7 +55,7 @@ const Home = () => {
             </div>
             <div className="flex items-center gap-3">
               <FaPhoneAlt className="text-[#fe5617]" size={20} />
-              <span>6384662481</span>
+              <span>638466****</span>
             </div>
             <div className="flex items-center gap-3">
               <FaEnvelope className="text-[#fe5617]" size={20} />
