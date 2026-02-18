@@ -14,10 +14,7 @@ const Footer = () => {
           </a>
         </p>
         <div className="flex justify-center gap-4 mt-2">
-        <a
-            href="https://github.com/badri-m"
-            className="hover:text-[#000000]"
-          >
+          <a href="https://github.com/badri-m" className="hover:text-[#000000]">
             <FaGithub size={29} />
           </a>
           <a
@@ -27,7 +24,7 @@ const Footer = () => {
             <FaLinkedin size={29} />
           </a>
           <a
-            href="https://www.instagram.com/immucoder/?__pwa=1"
+            href="https://www.instagram.com/lonely_boy_880?igsh=dThzZG5wN2Y5NjE4"
             className="hover:text-[#000000]"
           >
             <FaInstagram size={29} />

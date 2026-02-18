@@ -93,7 +93,7 @@ const Home = () => {
                 <FaLinkedin size={30} />
               </a>
               <a
-                href="https://instagram.com/lonely boy 880"
+                href="https://www.instagram.com/lonely_boy_880?igsh=dThzZG5wN2Y5NjE4"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-700 dark:text-gray-300 hover:text-[#fe5617] dark:hover:text-[#fe5617] transition-colors duration-300"
