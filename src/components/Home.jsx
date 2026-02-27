@@ -1,11 +1,5 @@
 import Typewriter from "typewriter-effect";
-import {
-  FaPhoneAlt,
-  FaEnvelope,
-  FaGithub,
-  FaLinkedin,
-  FaInstagram,
-  } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { SiCredly } from "react-icons/si";
 
@@ -91,14 +85,6 @@ const Home = () => {
                 className="text-gray-700 dark:text-gray-300 hover:text-[#fe5617] dark:hover:text-[#fe5617] transition-colors duration-300"
               >
                 <FaLinkedin size={30} />
-              </a>
-              <a
-                href="https://www.instagram.com/lonely_boy_880?igsh=dThzZG5wN2Y5NjE4"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-700 dark:text-gray-300 hover:text-[#fe5617] dark:hover:text-[#fe5617] transition-colors duration-300"
-              >
-                <FaInstagram size={30} />
               </a>
               <a
                 href="https://www.credly.com/users/badri-narayanan.m"

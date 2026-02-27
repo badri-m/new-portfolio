@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -22,12 +22,6 @@ const Footer = () => {
             className="hover:text-[#000000]"
           >
             <FaLinkedin size={29} />
-          </a>
-          <a
-            href="https://www.instagram.com/lonely_boy_880?igsh=dThzZG5wN2Y5NjE4"
-            className="hover:text-[#000000]"
-          >
-            <FaInstagram size={29} />
           </a>
         </div>
       </div>
