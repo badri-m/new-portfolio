@@ -19,6 +19,7 @@ import {
   SiExpress,
   SiNetlify,
   SiMongodb,
+  SiMysql,
   SiPostman,
   SiOracle,
   SiKubernetes,
@@ -154,6 +155,10 @@ const About = () => {
               {
                 icon: <SiMongodb size={40} className="text-[#47a248]" />,
                 name: "MongoDB",
+              },
+              {
+                icon: <SiMysql size={40} className="text-[#00758f]" />,
+                name: "MySQL",
               },
 
               // ===== TOOLS =====
