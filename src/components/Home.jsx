@@ -1,9 +1,18 @@
+import { useState } from "react";
 import Typewriter from "typewriter-effect";
 import { FaPhoneAlt, FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { SiCredly } from "react-icons/si";
 
 const Home = () => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyPhone = () => {
+    navigator.clipboard.writeText("6384662481");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <div
       id="home"
@@ -47,14 +56,6 @@ const Home = () => {
               <FaLocationDot className="text-[#fe5617]" size={20} />
               <span>Chidambaram</span>
             </div>
-            <div className="flex items-center gap-3">
-              <FaPhoneAlt className="text-[#fe5617]" size={20} />
-              <span>638466****</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <FaEnvelope className="text-[#fe5617]" size={20} />
-              <span>badrinarayananm22@gmail.com</span>
-            </div>
           </div>
 
           {/* Buttons & Socials Container */}
@@ -70,6 +71,25 @@ const Home = () => {
 
             {/* Social Media Icons */}
             <div className="flex items-center gap-5">
+              <button
+                onClick={handleCopyPhone}
+                className="relative text-gray-700 dark:text-gray-300 hover:text-[#fe5617] dark:hover:text-[#fe5617] transition-colors duration-300"
+                aria-label="Copy phone number"
+              >
+                <FaPhoneAlt size={30} />
+                {copied && (
+                  <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded whitespace-nowrap">
+                    Copied!
+                  </span>
+                )}
+              </button>
+              <a
+                href="mailto:badrinarayananm22@gmail.com"
+                className="text-gray-700 dark:text-gray-300 hover:text-[#fe5617] dark:hover:text-[#fe5617] transition-colors duration-300"
+                aria-label="Send email"
+              >
+                <FaEnvelope size={30} />
+              </a>
               <a
                 href="https://github.com/badri-m"
                 target="_blank"
@@ -79,7 +99,7 @@ const Home = () => {
                 <FaGithub size={30} />
               </a>
               <a
-                href="https://www.linkedin.com/in/badri-narayanan-m-22k18?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                href="https://www.linkedin.com/in/badri-narayanan-m-22k18"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-700 dark:text-gray-300 hover:text-[#fe5617] dark:hover:text-[#fe5617] transition-colors duration-300"
