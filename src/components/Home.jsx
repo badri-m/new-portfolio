@@ -62,8 +62,8 @@ const Home = () => {
           <div className="flex flex-col md:flex-row items-center gap-6 mt-4">
             {/* Download CV Button */}
             <a
-              href="public/Badri_Narayanan-resume.pdf"
-              download
+              href="/Badri_Narayanan-resume.pdf"
+              download="Badri_Narayanan-resume.pdf"
               className="bg-[#fe5617] hover:bg-[#e14d15] text-white dark:bg-white dark:text-black px-6 py-3 rounded-2xl font-bold transition-all duration-300 shadow-lg hover:shadow-orange-500/20"
             >
               Download CV
